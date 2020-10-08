@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Lista de compras con Vue.js</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="01.css" media="screen" />
+    </head>
+    <body>
+        <div class="jumbotron jumbotron-fluid personalizo">
+          <div class="container">
+            <h3 class="display-4">Listado de compras</h3>
+            <p class="lead">Practicando Vue.js</p>
+          </div>
+        </div>
+        <div id="app" class="container">
+            <div class="abs-center">
+                <div>
+                    <h5>Cantidades compradas: {{sumarFrutas}}</h5>
+                    <input type="text" v-model="nuevaFruta"  @keyup.enter="agregarFruta" class="form-control" placeholder="fruta">
+                    <button @click="agregarFruta" class="btn-block btn-primary">Agregar</button>
+                </div>
+        </div>
+            <div class="abs-center color">
+                    <ul class="list-group">
+                        <li v-for='fruta of frutas' class="list-group-item">
+                            <input type="number" v-model.number="fruta.cantidad" class="form-control">
+                            {{fruta.nombre}}
+                            <button @click="fruta.cantidad++" class="btn btn-primary btn-sm " style="float:right">+</button>
+                            <span v-if='fruta.cantidad === 0'> - Sin stock</span>
+                        </li>
+                    </ul>
+                </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script type="text/javascript" src="01.js">
+
+        </script>
+    </body>
+</html>
