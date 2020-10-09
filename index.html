@@ -49,7 +49,7 @@
             <div class="abs-center color">
                     <ul class="list-group">
                         <li v-for='fruta of frutas' class="list-group-item">
-                            <input type="number" v-model.number="fruta.cantidad" class="form-control">
+                            <input type="number" v-model.number="fruta.cantidad" class="form-control" min="0">
                             {{fruta.nombre}}
                             <button @click="fruta.cantidad++" class="btn btn-primary btn-sm " style="float:right">+</button>
                             <span v-if='fruta.cantidad === 0'> - Sin stock</span>
