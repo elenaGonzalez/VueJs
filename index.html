@@ -2,11 +2,35 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
+        <!--Insert OG Markup -->
+
+        <meta prefix="og: http://ogp.me/ns#" property="og:type" content="website" />
+
+        <meta prefix="og: http://ogp.me/ns#" property="og:title" content="The Title of Your Page" />
+
+        <meta prefix="og: http://ogp.me/ns#" property="og:description" content="The description of your page." />
+
+        <meta prefix="og: http://ogp.me/ns#" property="og:image" content="The image url" />
+
+        <meta prefix="og: http://ogp.me/ns#" property="og:url" content="The url of your web page" />
+
+        <!--Insert Twitter Card Markup -->
+
+        <meta name="twitter:card" content="summary_large_image" />
+
+        <meta name="twitter:site" content="@YourTwitterUsername" />
+
+        <meta name="twitter:domain" content="The url of your web page" />
+
+        <meta name="twitter:title" content="The Title of Your Page" />
+
+        <meta name="twitter:description" content="The description of your page." />
+        <meta name="author" content="Elena Gonzalez"/>
         <title>Lista de compras con Vue.js</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="01.css" media="screen" />
     </head>
-    
+
     <body>
         <div class="jumbotron jumbotron-fluid personalizo">
           <div class="container">
@@ -25,7 +49,7 @@
             <div class="abs-center color">
                     <ul class="list-group">
                         <li v-for='fruta of frutas' class="list-group-item">
-                            <input type="number" v-model.number="fruta.cantidad" class="form-control">
+                            <input type="number" v-model.number="fruta.cantidad" class="form-control" min="0">
                             {{fruta.nombre}}
                             <button @click="fruta.cantidad++" class="btn btn-primary btn-sm " style="float:right">+</button>
                             <span v-if='fruta.cantidad === 0'> - Sin stock</span>
